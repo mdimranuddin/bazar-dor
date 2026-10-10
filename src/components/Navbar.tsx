@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getCategories } from "@/lib/api";
 import CategoryLinks from "./CategoryLinks";
+import AuthButtons from "./AuthButtons";
 
 export default async function Navbar() {
   const categories = await getCategories();
@@ -26,17 +27,7 @@ export default async function Navbar() {
           </div>
         </Link>
 
-        <div className="flex gap-2">
-          <Link href="/signin" className="btn btn-outline btn-sm sm:btn-md">
-            সাইন ইন
-          </Link>
-          <Link
-            href="/signup"
-            className="btn btn-sm border-0 bg-green-600 text-white hover:bg-green-700 sm:btn-md"
-          >
-            সাইন আপ
-          </Link>
-        </div>
+        <AuthButtons />
       </div>
 
       <CategoryLinks categories={categories} />

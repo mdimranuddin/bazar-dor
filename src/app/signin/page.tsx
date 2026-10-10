@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
+import RedirectToast from "@/components/RedirectToast";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -36,6 +37,7 @@ export default function SignInPage() {
 
   return (
     <main className="mx-auto flex max-w-6xl justify-center px-4 py-12">
+      <RedirectToast />
       <div className="w-full max-w-md rounded-2xl border border-green-100 bg-white p-6 shadow-sm">
         <h1 className="text-2xl font-bold text-gray-900">সাইন ইন করুন</h1>
         <p className="mt-1 text-sm text-gray-500">
