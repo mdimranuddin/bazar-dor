@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
+import SocialButtons from "@/components/SocialButtons";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -83,6 +84,8 @@ export default function SignUpPage() {
             {loading ? "অপেক্ষা করুন..." : "রেজিস্টার করুন"}
           </button>
         </form>
+
+        <SocialButtons />
 
         <p className="mt-4 text-center text-sm text-gray-600">
           আগে থেকেই অ্যাকাউন্ট আছে?{" "}

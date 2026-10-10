@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
+import SocialButtons from "@/components/SocialButtons";
 import RedirectToast from "@/components/RedirectToast";
 
 export default function SignInPage() {
@@ -72,6 +73,8 @@ export default function SignInPage() {
             {loading ? "অপেক্ষা করুন..." : "সাইন ইন"}
           </button>
         </form>
+
+        <SocialButtons />
 
         <p className="mt-4 text-center text-sm text-gray-600">
           নতুন ব্যবহারকারী?{" "}
