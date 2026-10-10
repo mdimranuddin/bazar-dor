@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="bn" data-theme="light">
+    <html lang="bn" data-theme="light" data-scroll-behavior="smooth">
       <body
         className={`${bengali.className} flex min-h-screen flex-col`}
         suppressHydrationWarning
