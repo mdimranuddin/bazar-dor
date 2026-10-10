@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Ticker from "@/components/Ticker";
 import Footer from "@/components/Footer";
+import ToasterProvider from "@/components/ToasterProvider";
 
 const bengali = Noto_Sans_Bengali({ subsets: ["bengali", "latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         className={`${bengali.className} flex min-h-screen flex-col`}
         suppressHydrationWarning
       >
+        <ToasterProvider />
         <Navbar />
         <Ticker />
         <div className="flex-1">{children}</div>
