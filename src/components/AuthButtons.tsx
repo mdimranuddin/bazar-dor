@@ -65,9 +65,9 @@ export default function AuthButtons() {
       </div>
       <ul
         tabIndex={0}
-        className="menu dropdown-content z-50 mt-2 w-52 rounded-box border border-green-100 bg-white p-2 shadow"
+        className="menu dropdown-content z-50 mt-2 w-64 max-w-[85vw] rounded-box border border-green-100 bg-white p-2 shadow"
       >
-        <li className="px-3 py-1 text-xs text-gray-500">{user.email}</li>
+        <li className="break-all px-3 py-1 text-xs text-gray-500">{user.email}</li>
         <li>
           <Link href="/profile">আমার প্রোফাইল</Link>
         </li>

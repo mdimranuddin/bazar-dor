@@ -17,17 +17,17 @@ export default async function Navbar() {
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo-icon.png" alt="বাজার দর" width={36} height={36} />
-          <div className="leading-tight">
+        <Link href="/" className="flex min-w-0 items-center gap-2">
+          <Image src="/logo-icon.png" alt="বাজার দর" width={36} height={36} className="shrink-0" />
+          <div className="min-w-0 leading-tight">
             <p className="text-lg font-bold text-green-700">বাজার দর</p>
-            <p className="text-xs text-gray-500" suppressHydrationWarning>
+            <p className="truncate text-[10px] text-gray-500 sm:text-xs" suppressHydrationWarning>
               {date}
             </p>
           </div>
         </Link>
 
-        <AuthButtons />
+        <div className="shrink-0"><AuthButtons /></div>
       </div>
 
       <CategoryLinks categories={categories} />
