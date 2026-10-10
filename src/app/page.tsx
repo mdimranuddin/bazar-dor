@@ -1,16 +1,15 @@
 import { getProducts } from "@/lib/api";
-import { formatPrice, unitLabel, formatChange } from "@/lib/bn";
+import ProductCard from "@/components/ProductCard";
 
 export default async function Home() {
   const products = await getProducts();
-  const p = products[0];
   return (
-    <main className="p-10">
-      <p className="mb-4">মোট পণ্য: {products.length}</p>
-      <p>
-        {p.image} {p.nameBn} — {unitLabel(p.unit)} — {formatPrice(p.today)} —{" "}
-        {formatChange(p.change.dir, p.change.pct)}
-      </p>
+    <main className="mx-auto max-w-6xl px-4 py-8">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {products.map((p) => (
+          <ProductCard key={p.id} product={p} />
+        ))}
+      </div>
     </main>
   );
 }
