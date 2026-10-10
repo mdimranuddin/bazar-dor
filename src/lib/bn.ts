@@ -26,5 +26,5 @@ export function unitLabel(unit: string): string {
 // { dir: "up", pct: 2.1 } -> "▲ ২.১%"
 export function formatChange(dir: string, pct: number): string {
   const arrow = dir === "up" ? "▲" : dir === "down" ? "▼" : "—";
-  return `${arrow} ${toBn(pct.toFixed(1))}%`;
+  return `${arrow} ${toBn(Math.abs(pct).toFixed(1))}%`;
 }

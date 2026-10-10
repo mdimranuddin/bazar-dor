@@ -1,4 +1,4 @@
-import type { Product } from "./types";
+import type { Product, Category } from "./types";
 
 const BASES = [
   "https://api.api-store.workers.dev/api/bazardor",
@@ -26,4 +26,19 @@ export function getProducts(): Promise<Product[]> {
 export async function getProduct(slug: string): Promise<Product | undefined> {
   const products = await getProducts();
   return products.find((p) => p.slug === slug);
+}
+
+export async function getCategories(): Promise<Category[]> {
+  const products = await getProducts();
+  const map = new Map<string, Category>();
+  for (const p of products) {
+    if (!map.has(p.category)) {
+      map.set(p.category, {
+        slug: p.category,
+        name: p.categoryNameBn,
+        icon: p.categoryIcon,
+      });
+    }
+  }
+  return [...map.values()];
 }

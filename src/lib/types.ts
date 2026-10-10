@@ -21,3 +21,9 @@ export type Product = {
   change: { dir: string; pct: number };
   markets: Market[];
 };
+
+export type Category = {
+  slug: string;
+  name: string;
+  icon: string;
+};
