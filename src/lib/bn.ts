@@ -28,3 +28,8 @@ export function formatChange(dir: string, pct: number): string {
   const arrow = dir === "up" ? "▲" : dir === "down" ? "▼" : "—";
   return `${arrow} ${toBn(Math.abs(pct).toFixed(1))}%`;
 }
+
+// "kg" -> "কেজি"
+export function unitShort(unit: string): string {
+  return unitLabel(unit).replace("প্রতি ", "");
+}

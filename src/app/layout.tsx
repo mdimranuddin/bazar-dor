@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Ticker from "@/components/Ticker";
 
 const bengali = Noto_Sans_Bengali({ subsets: ["bengali", "latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Navbar />
+        <Ticker />
         <div className="flex-1">{children}</div>
       </body>
     </html>
