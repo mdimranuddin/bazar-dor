@@ -3,6 +3,7 @@ import { Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Ticker from "@/components/Ticker";
+import Footer from "@/components/Footer";
 
 const bengali = Noto_Sans_Bengali({ subsets: ["bengali", "latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Navbar />
         <Ticker />
         <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );
