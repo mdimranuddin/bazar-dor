@@ -1,5 +1,6 @@
 import { cache } from "react";
 import type { Product, Category } from "./types";
+import snapshot from "@/data/products.json";
 
 const BASES = [
   "https://api.api-store.workers.dev/api/bazardor",
@@ -23,7 +24,7 @@ async function fetchJson<T>(path: string): Promise<T> {
         lastError = err;
       }
     }
-    await sleep(400 * (attempt + 1));
+    await sleep(300 * (attempt + 1));
   }
   throw lastError;
 }
@@ -35,9 +36,9 @@ export const getProducts = cache(async (): Promise<Product[]> => {
     lastGood = data;
     lastGoodAt = Date.now();
     return data;
-  } catch (err) {
+  } catch {
     if (lastGood) return lastGood;
-    throw err;
+    return snapshot as unknown as Product[];
   }
 });
 
